@@ -93,14 +93,14 @@ int find_length (char str[], int index)
 
 //8
 
-// Function to find string which has
-// first character of each word.
-char first(string str)
+// Function to find first uppercase letter in a string
+char first(string str,int i=0)
 {
-	for (int i = 0; i < str.length(); i++)
+	if(str[i]=='\0')
+		return 0;
 		if (isupper(str[i]))
 			return str[i];
-	return 0;
+	return first(str,i+1);
 }
 //9
 
@@ -251,7 +251,7 @@ int main(){
 
 		   };break;
 	case 8:{
-		string str = "geeksforgeeKS";
+		string str = "programming Language";
 		char res = first(str);
 		if (res == 0)
 			cout << "No uppercase letter";
